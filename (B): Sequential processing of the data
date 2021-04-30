@@ -1,0 +1,16 @@
+#Data is accessed in a linear order, one after the other, in Sequential Processing of Data.
+# Ask user to enter value of a which is of float type
+a=float(input("Enter a "))
+# Ask user to enter value of b which is of float type
+b=float(input("Enter b "))
+# Value of a,b are stored in Values.
+Values = [a, b]
+# variable to store Total initialized to 0
+Total = 0
+# Loop till it finds values
+for val in Values:
+# Calculate Total
+  
+Total = Total+val
+# Print Value of Total
+print("The Total is", Total)
