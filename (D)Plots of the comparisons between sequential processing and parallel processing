@@ -1,0 +1,60 @@
+#If the number of employees is different and they are counted from 1 to 10, sequential processing would start with 1, then 2, then 3, and so on until 10.
+
+#In Parallel Processing, 1 will run alongside 2, 3 will run alongside 4, and so on before 10 is reached, or 1 will run with 5, then 2 with 4, and so on until everybody has run.
+
+#For Sequential Processing -
+
+import numpy as np
+from time import time
+# Prepare data
+# random.Randomstate(5) is used to generate different kinds of random number
+# seed value is optional and here it is 10 it means call rand 10 times
+np.random.RandomState(10)
+# generate random number First is minimum, Second is maximum and next to it is size
+arr = np.random.randint(0, 10, size=[6, 2])
+# Assign arr to data
+data = arr.tolist()
+data[:5]
+
+def Nos_in_range(row,min,max):
+  
+# "It simply Returns how many numbers are there between maximum` and `minimum` in `row given`"
+count = 0
+for n in row:
+if minimum <= n <= maximum:
+count = count + 1
+return count
+  
+  
+for row in data:
+print(Nos_in_range(row, 2, 6))
+
+-----------------------------------------------------------------------------------------------//----------------------------------------------------------------------------------
+
+#For Parallel Processing -
+
+import numpy as ny
+from time import time
+# Prepare data
+# random.Randomstate(5) is used to generate different kinds of random number
+# seed value is optional and here it is 10 it means call rand 10 times
+ny.random.RandomState(10)
+# generate random number First is minimum, Second is maximum and next to it is size
+arr = ny.random.randint(0, 10, size=[6, 2])
+# Assign arr to data
+data = arr.tolist()
+data[:5]
+# Parallelizing using Pool.map()
+import multiprocessing as mt
+# Redefine, with only 1 mandatory argument.
+def Nos_in_range_rowonly(row,min=2,max=6):
+count = 0
+for n in row:
+if min <= n <= max:
+count = count + 1
+return count
+pool = mt.Pool(mt.cpu_count())
+results = pool.map(Nos_in_range_rowonly, [row for row in data])
+pool.close()
+print(results[:10])
+
