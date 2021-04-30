@@ -1,0 +1,9 @@
+#(A): Only the data needed for the processing to take place is loaded.
+
+#It basically refers to the loading of files and the declaration of variables in the programme that are needed for processing to take place.
+
+#Sample code
+# Ask user to enter value of a which is of float type
+a=float(input("Enter a "))
+# Ask user to enter value of b which is of float type
+b=float(input("Enter b "))
