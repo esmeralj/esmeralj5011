@@ -1,4 +1,4 @@
-# esmeralj 8690469
+# esmeralj 
 
 Introduction:
 For this Project it was given a task by the client to research the use of parallel processing to complete the study cycle, with the following requirements:
